@@ -1,0 +1,63 @@
+# Pretrained model registry used by scripts/download_models.py.
+models:
+  yunet:
+    task: detection
+    description: "YuNet lightweight face detector (2023mar), 5 landmarks, trained on WIDER FACE"
+    homepage: "https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet"
+    license: "MIT"
+    files:
+      - filename: face_detection_yunet_2023mar.onnx
+        url: "https://huggingface.co/opencv/face_detection_yunet/resolve/main/face_detection_yunet_2023mar.onnx"
+        sha256: 8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4
+        checksum_source: "huggingface x-linked-etag (sha256)"
+        size: 232589
+
+  sface:
+    task: recognition
+    description: "SFace (MobileFaceNet backbone, sigmoid-constrained hypersphere loss), 128-d embedding"
+    homepage: "https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface"
+    license: "Apache-2.0"
+    files:
+      - filename: face_recognition_sface_2021dec.onnx
+        url: "https://huggingface.co/opencv/face_recognition_sface/resolve/main/face_recognition_sface_2021dec.onnx"
+        sha256: 0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79
+        checksum_source: "huggingface x-linked-etag (sha256)"
+        size: 38696353
+
+  buffalo_l:
+    task: [detection, recognition]
+    description: "InsightFace buffalo_l pack: SCRFD-10GF detector (det_10g.onnx) + ArcFace ResNet50 trained on WebFace600K (w600k_r50.onnx)"
+    homepage: "https://github.com/deepinsight/insightface/tree/master/python-package"
+    license: "Non-commercial research use only (InsightFace pretrained-model terms). Code is MIT."
+    files:
+      - filename: buffalo_l.zip
+        url: "https://github.com/deepinsight/insightface/releases/download/v0.7/buffalo_l.zip"
+        sha256: 80ffe37d8a5940d59a7384c201a2a38d4741f2f3c51eef46ebb28218a7b0ca2f
+        checksum_source: "recorded on first download 2026-10-30 (no published checksum)"
+        size: 288621354
+        extract: true
+
+  face_landmarker:
+    task: landmarks
+    description: "MediaPipe Face Landmarker (BlazeFace short-range + 478-point face mesh + blendshapes), float16"
+    homepage: "https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker"
+    license: "Apache-2.0"
+    files:
+      - filename: face_landmarker.task
+        url: "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task"
+        sha256: 64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff
+        checksum_source: "recorded on first download 2026-10-30 (no published checksum)"
+        size: 3758596
+
+  tasks_vision:
+    task: landmarks
+    description: "MediaPipe Tasks Vision web runtime (WASM). Runs the face_landmarker model in the page on every video frame"
+    homepage: "https://www.npmjs.com/package/@mediapipe/tasks-vision"
+    license: "Apache-2.0"
+    files:
+      - filename: tasks-vision-1.1.1.tgz
+        url: "https://registry.npmjs.org/@mediapipe/tasks-vision/-/tasks-vision-1.1.1.tgz"
+        sha256: fbbea455a8b50c31c39092027b3548336de198bfcdbaf75cc08245e773011b8f
+        checksum_source: "recorded on first download 2026-10-30, after matching the npm registry sha512 integrity"
+        size: 12258918
+        extract: true

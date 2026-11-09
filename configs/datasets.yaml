@@ -1,0 +1,88 @@
+# Dataset registry used by scripts/download_datasets.py.
+# Every URL here is either the dataset's official host or a distribution the
+# official page links to / a long-standing mirror maintained by a major library.
+# sha256 values come from the hosting service (Hugging Face x-linked-etag) or
+# from scikit-learn's pinned checksums. `null` means no published checksum: the
+# hash is computed on first download and recorded in the manifest.
+
+datasets:
+  wider_face:
+    description: "WIDER FACE face detection benchmark (32,203 images, 393,703 faces, 61 event classes)"
+    homepage: "http://shuoyang1213.me/WIDERFACE/"
+    version: "v1.0 images; annotations as revised 2017-03-31"
+    license: "CC BY-NC-ND (non-commercial research; see homepage)"
+    citation: "Yang et al., WIDER FACE: A Face Detection Benchmark, CVPR 2016"
+    expected:
+      train_images: 12880
+      val_images: 3226
+    files:
+      - filename: WIDER_train.zip
+        url: "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_train.zip"
+        source_note: "Hugging Face copy linked from the official homepage"
+        sha256: e23b76129c825cafae8be944f65310b2e1ba1c76885afe732f179c41e5ed6d59
+        checksum_source: "huggingface x-linked-etag (sha256)"
+        size: 1465602149
+        extract: true
+      - filename: WIDER_val.zip
+        url: "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_val.zip"
+        source_note: "Hugging Face copy linked from the official homepage"
+        sha256: f9efbd09f28c5d2d884be8c0eaef3967158c866a593fc36ab0413e4b2a58a17a
+        checksum_source: "huggingface x-linked-etag (sha256)"
+        size: 362752168
+        extract: true
+      - filename: wider_face_split.zip
+        url: "http://shuoyang1213.me/WIDERFACE/support/bbx_annotation/wider_face_split.zip"
+        source_note: "Official homepage (bounding-box annotations)"
+        sha256: c7561e4f5e7a118c249e0a5c5c902b0de90bbf120d7da9fa28d99041f68a8a5c
+        checksum_source: "recorded on first download 2026-10-30 (no published checksum)"
+        size: 3591642
+        extract: true
+      - filename: eval_tools.zip
+        url: "http://shuoyang1213.me/WIDERFACE/support/eval_script/eval_tools.zip"
+        source_note: "Official homepage (evaluation code + easy/medium/hard ground truth)"
+        sha256: 1cf49c8243fa8a1632efe7f6aa09fd7a3994ac838c9008bdbc9dd1d547bb234a
+        checksum_source: "recorded on first download 2026-10-30 (no published checksum)"
+        size: 8447003
+        extract: true
+      # The test split has no public annotations (evaluation is by submission),
+      # so it is not useful locally. Enable with --include-optional.
+      - filename: WIDER_test.zip
+        url: "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_test.zip"
+        source_note: "Hugging Face copy linked from the official homepage"
+        sha256: 3b0313e11ea292ec58894b47ac4c0503b230e12540330845d70a7798241f88d3
+        checksum_source: "huggingface x-linked-etag (sha256)"
+        size: 1844140520
+        extract: true
+        optional: true
+
+  lfw:
+    description: "Labeled Faces in the Wild (13,233 images of 5,749 people; 6,000 verification pairs in 10 folds)"
+    homepage: "https://vis-www.cs.umass.edu/lfw/"
+    version: "original (non-aligned 250x250), pairs.txt View 2"
+    license: "No formal license; research benchmark distributed publicly by UMass Amherst. Images are of public figures collected from news media."
+    citation: "Huang et al., Labeled Faces in the Wild, UMass Tech Report 07-49, 2007"
+    expected:
+      images: 13233
+      identities: 5749
+    files:
+      - filename: lfw.tgz
+        url: "https://ndownloader.figshare.com/files/5976018"
+        source_note: "scikit-learn's figshare mirror (official UMass host returned NXDOMAIN on 2026-10-30)"
+        sha256: 055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0
+        checksum_source: "scikit-learn sklearn/datasets/_lfw.py"
+        size: 180566744
+        extract: true
+      - filename: pairs.txt
+        url: "https://ndownloader.figshare.com/files/5976006"
+        source_note: "scikit-learn's figshare mirror"
+        sha256: ea42330c62c92989f9d7c03237ed5d591365e89b3e649747777b70e692dc1592
+        checksum_source: "scikit-learn sklearn/datasets/_lfw.py"
+        size: 155335
+      - filename: pairsDevTrain.txt
+        url: "https://ndownloader.figshare.com/files/5976012"
+        sha256: 1d454dada7dfeca0e7eab6f65dc4e97a6312d44cf142207be28d688be92aabfa
+        checksum_source: "scikit-learn sklearn/datasets/_lfw.py"
+      - filename: pairsDevTest.txt
+        url: "https://ndownloader.figshare.com/files/5976009"
+        sha256: 7cb06600ea8b2814ac26e946201cdb304296262aad67d046a16a7ec85d0ff87c
+        checksum_source: "scikit-learn sklearn/datasets/_lfw.py"

@@ -1,0 +1,46 @@
+# Face detection. `backend` selects the default detector used by the service and demo.
+backend: yunet
+
+yunet:                     # OpenCV YuNet, MIT license (default)
+  model_path: models/pretrained/yunet/face_detection_yunet_2023mar.onnx
+  score_threshold: 0.6     # operating point for the demo/service; evaluation sweeps all scores
+  nms_threshold: 0.3
+  top_k: 5000
+  max_side: null           # e.g. 1280 to cap compute on large photos (small faces get harder)
+  min_face_size: 0
+
+scrfd:                     # InsightFace SCRFD-10GF, non-commercial research license
+  model_path: models/pretrained/buffalo_l/det_10g.onnx
+  score_threshold: 0.5
+  nms_threshold: 0.4
+  input_size: 640
+  providers: cpu
+
+torchvision:               # fine-tuned by scripts/train_detector.py
+  checkpoint: models/checkpoints/detector_ft/best.pt
+  score_threshold: 0.5
+
+# Fine-tuning experiment (scripts/train_detector.py)
+training:
+  seed: 42
+  arch: fasterrcnn_mobilenet_v3_large_fpn
+  weights: DEFAULT          # COCO-pretrained torchvision weights (BSD-3 code; COCO-trained)
+  device: auto              # auto -> cuda | mps | cpu
+  train_split: data/splits/wider_face/train_ft.json
+  val_split: data/splits/wider_face/val_ft.json
+  # Run 1 (bounded first experiment): max_train_images 3000, image_min_side 640, 3 epochs, 12 min.
+  # Run 2 (this config): 6,000 train_ft images at a higher input scale, 2 epochs (~45 min on M4 Pro MPS).
+  max_train_images: 6000    # null = all 11,590 train_ft images (~43 min per epoch at this scale)
+  max_val_images: 300
+  min_face_px: 8            # training targets below this size are recorded and skipped
+  image_min_side: 800       # torchvision resize: shorter side -> 800 (WIDER images upscale ~1.17x)
+  image_max_side: 1333
+  batch_size: 4
+  epochs: 2
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  warmup_iters: 200
+  num_workers: 4
+  checkpoint_dir: models/checkpoints/detector_ft
+  log_every: 50

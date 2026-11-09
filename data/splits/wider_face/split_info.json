@@ -1,0 +1,29 @@
+{
+ "seed": 42,
+ "val_fraction": 0.1,
+ "train_coco": {
+  "images": 12880,
+  "annotations": 159420,
+  "flagged_ignore": {
+   "wider_invalid_flag": 2399,
+   "degenerate": 27
+  },
+  "unreadable_images": []
+ },
+ "val_coco": {
+  "images": 3226,
+  "annotations": 39708,
+  "flagged_ignore": {
+   "wider_invalid_flag": 585,
+   "degenerate": 11
+  },
+  "unreadable_images": []
+ },
+ "train_ft": 11590,
+ "val_ft": 1289,
+ "test": 3226,
+ "excluded_train_leakage": [
+  "29--Students_Schoolkids/29_Students_Schoolkids_Students_Schoolkids_29_475.jpg"
+ ],
+ "excluded_train_unreadable": []
+}

@@ -1,0 +1,77 @@
+{
+  "wider_face": {
+    "seed": 42,
+    "val_fraction": 0.1,
+    "train_coco": {
+      "images": 12880,
+      "annotations": 159420,
+      "flagged_ignore": {
+        "wider_invalid_flag": 2399,
+        "degenerate": 27
+      },
+      "unreadable_images": []
+    },
+    "val_coco": {
+      "images": 3226,
+      "annotations": 39708,
+      "flagged_ignore": {
+        "wider_invalid_flag": 585,
+        "degenerate": 11
+      },
+      "unreadable_images": []
+    },
+    "train_ft": 11590,
+    "val_ft": 1289,
+    "test": 3226,
+    "excluded_train_leakage": [
+      "29--Students_Schoolkids/29_Students_Schoolkids_Students_Schoolkids_29_475.jpg"
+    ],
+    "excluded_train_unreadable": []
+  },
+  "lfw": {
+    "pairs": {
+      "folds": 10,
+      "pairs": 6000
+    },
+    "openset": {
+      "calibration": {
+        "identities": 2874,
+        "enrolled": 460,
+        "known_probes": 1674,
+        "unknown_probes": 2414
+      },
+      "test": {
+        "identities": 2875,
+        "enrolled": 441,
+        "known_probes": 1656,
+        "unknown_probes": 2434
+      }
+    },
+    "faces_yunet": {
+      "detector": "yunet",
+      "status_counts": {
+        "detected": 13233
+      },
+      "fallback_images": [],
+      "errors": []
+    },
+    "faces_scrfd": {
+      "detector": "scrfd",
+      "status_counts": {
+        "detected": 13214,
+        "detected_low_threshold": 12,
+        "fallback_mean_keypoints": 7
+      },
+      "fallback_images": [
+        "Grady_Little/Grady_Little_0001.jpg",
+        "John_Bolton/John_Bolton_0016.jpg",
+        "Lance_Armstrong/Lance_Armstrong_0015.jpg",
+        "Mohammad_Fares/Mohammad_Fares_0001.jpg",
+        "Morgan_Freeman/Morgan_Freeman_0002.jpg",
+        "Padraig_Harrington/Padraig_Harrington_0004.jpg",
+        "Richard_Gephardt/Richard_Gephardt_0007.jpg"
+      ],
+      "errors": []
+    }
+  }
+}

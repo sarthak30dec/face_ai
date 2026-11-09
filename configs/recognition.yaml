@@ -1,0 +1,83 @@
+# Face recognition + landmark mesh.
+#
+# backend: arcface_r50 = highest accuracy (InsightFace weights: NON-COMMERCIAL research use only)
+#          sface       = permissive Apache-2.0 alternative, somewhat less accurate (see docs/evaluation.md)
+# Galleries are tied to the embedder: switching backend requires re-enrolling people.
+backend: arcface_r50
+
+# Per-embedder pipeline choices were measured on LFW (docs/evaluation.md §6):
+#  - sface: flip TTA + SCRFD-refined keypoints cut EER 0.82 % -> 0.48 %, so both are on.
+#  - arcface_r50: neither changed accuracy measurably (LFW is saturated) and they double the cost, so both are off.
+sface:
+  model_path: models/pretrained/sface/face_recognition_sface_2021dec.onnx
+  providers: cpu
+  flip_augment: true       # embed the face and its mirror image, average (test-time augmentation)
+  refine_keypoints: true
+
+arcface_r50:
+  model_path: models/pretrained/buffalo_l/w600k_r50.onnx
+  providers: cpu
+  flip_augment: false
+  refine_keypoints: false
+  batch_size: 32
+
+alignment:
+  # Re-detect the 5 keypoints with SCRFD on a small crop around each face before aligning
+  # (more precise than YuNet's keypoints). SCRFD weights: non-commercial research only.
+  # Default when an embedder section does not set refine_keypoints itself.
+  refine_keypoints: false
+  # Strongly tilted faces (> roll_threshold_deg, or keypoints in an implausible layout): use the face mesh
+  # to rotate the face upright, re-detect and align. Upright faces are unaffected, so calibration still holds.
+  roll_correction: true
+  roll_threshold_deg: 20
+  refiner:
+    model_path: models/pretrained/buffalo_l/det_10g.onnx
+    crop_scale: 2.0
+    input_size: 192
+
+matching:
+  strategy: mean           # mean template per person | max over references
+  top_k: 3
+  # Accept only if the best person beats the runner-up by this much; otherwise "uncertain".
+  margin: 0.05
+  # Thresholds come from calibration files written by scripts/evaluate_recognition.py
+  # (LFW calibration identities only; checked on disjoint test identities):
+  #   identification accept = FPIR 1 %, reject = 1 % of genuine scores below it,
+  #   verification (1:1) accept = FAR 1e-4. Override with accept / reject / verify_accept /
+  #   verify_reject keys inside a profile if needed.
+  profiles:
+    arcface_r50:
+      calibration: configs/calibration/arcface_r50_yunet.json
+    sface:
+      calibration: configs/calibration/sface_flip_scrfd.json
+
+quality:                   # faces below min_quality are reported as "uncertain", never identified
+  enabled: true
+  min_quality: 0.35
+  # factor ranges (0 at *_bad, 1 at *_good); see src/face_ai/recognition/quality.py
+  iod_bad: 12
+  iod_good: 32
+  sharp_bad: 15
+  sharp_good: 120
+  yaw_good: 0.15
+  yaw_bad: 0.55
+  det_bad: 0.5
+  det_good: 0.85
+
+enrollment:
+  min_face_size: 64
+  min_detection_score: 0.8
+  min_quality: 0.6         # reference photos must be clearly better than the identification bar
+  consistency_threshold: auto   # auto = 1:1 reject threshold of the active embedder
+  recommended_references: 3
+
+video:
+  aggregate_window: 15     # frames of the same track averaged (quality-weighted) before identifying
+
+landmarks:                 # MediaPipe Face Landmarker (visualization only; not used for identity)
+  model_path: models/pretrained/face_landmarker/face_landmarker.task
+  num_faces: 4
+  min_detection_confidence: 0.5
+  min_presence_confidence: 0.5
+  crop_scale: 1.8
+  crop_size: 256

@@ -1,0 +1,115 @@
+{
+  "description": "WIDER FACE face detection benchmark (32,203 images, 393,703 faces, 61 event classes)",
+  "source": "http://shuoyang1213.me/WIDERFACE/",
+  "version": "v1.0 images; annotations as revised 2017-03-31",
+  "license": "CC BY-NC-ND (non-commercial research; see homepage)",
+  "citation": "Yang et al., WIDER FACE: A Face Detection Benchmark, CVPR 2016",
+  "download_date": "2026-10-29T22:20:23.194816+00:00",
+  "location": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face",
+  "files": [
+    {
+      "filename": "WIDER_train.zip",
+      "url": "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_train.zip",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/archives/WIDER_train.zip",
+      "size": 1465602149,
+      "sha256": "e23b76129c825cafae8be944f65310b2e1ba1c76885afe732f179c41e5ed6d59",
+      "checksum_verified": true,
+      "checksum_source": "huggingface x-linked-etag (sha256)",
+      "downloaded": false,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face",
+      "extracted_members": 12943,
+      "seconds": 0.8095626831054688,
+      "extra": {}
+    },
+    {
+      "filename": "WIDER_val.zip",
+      "url": "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_val.zip",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/archives/WIDER_val.zip",
+      "size": 362752168,
+      "sha256": "f9efbd09f28c5d2d884be8c0eaef3967158c866a593fc36ab0413e4b2a58a17a",
+      "checksum_verified": true,
+      "checksum_source": "huggingface x-linked-etag (sha256)",
+      "downloaded": false,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face",
+      "extracted_members": 3289,
+      "seconds": 0.19693803787231445,
+      "extra": {}
+    },
+    {
+      "filename": "wider_face_split.zip",
+      "url": "http://shuoyang1213.me/WIDERFACE/support/bbx_annotation/wider_face_split.zip",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/archives/wider_face_split.zip",
+      "size": 3591642,
+      "sha256": "c7561e4f5e7a118c249e0a5c5c902b0de90bbf120d7da9fa28d99041f68a8a5c",
+      "checksum_verified": true,
+      "checksum_source": "\\\"recorded on first download 2026-10-30 (no published checksum)\\\"",
+      "downloaded": false,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face",
+      "extracted_members": 8,
+      "seconds": 0.002557039260864258,
+      "extra": {}
+    },
+    {
+      "filename": "eval_tools.zip",
+      "url": "http://shuoyang1213.me/WIDERFACE/support/eval_script/eval_tools.zip",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/archives/eval_tools.zip",
+      "size": 8447003,
+      "sha256": "1cf49c8243fa8a1632efe7f6aa09fd7a3994ac838c9008bdbc9dd1d547bb234a",
+      "checksum_verified": true,
+      "checksum_source": "\\\"recorded on first download 2026-10-30 (no published checksum)\\\"",
+      "downloaded": false,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face",
+      "extracted_members": 400,
+      "seconds": 0.0049779415130615234,
+      "extra": {}
+    }
+  ],
+  "archive_bytes": 1840392962,
+  "image_counts": {
+    "train": 12880,
+    "val": 3226,
+    "test": 0
+  },
+  "expected": {
+    "train_images": 12880,
+    "val_images": 3226
+  },
+  "download_status": "downloaded",
+  "download_errors": [],
+  "name": "wider_face",
+  "updated_at": "2026-10-29T22:20:23.195705+00:00",
+  "validation_status": "valid_with_warnings",
+  "validation_report": "/Users/ssrivastava/Personal/face_ai/data/manifests/wider_face_validation.json",
+  "validation_problems": [
+    "1 byte-identical images appear in both train and val"
+  ],
+  "preprocessing": {
+    "seed": 42,
+    "val_fraction": 0.1,
+    "train_coco": {
+      "images": 12880,
+      "annotations": 159420,
+      "flagged_ignore": {
+        "wider_invalid_flag": 2399,
+        "degenerate": 27
+      },
+      "unreadable_images": []
+    },
+    "val_coco": {
+      "images": 3226,
+      "annotations": 39708,
+      "flagged_ignore": {
+        "wider_invalid_flag": 585,
+        "degenerate": 11
+      },
+      "unreadable_images": []
+    },
+    "train_ft": 11590,
+    "val_ft": 1289,
+    "test": 3226,
+    "excluded_train_leakage": [
+      "29--Students_Schoolkids/29_Students_Schoolkids_Students_Schoolkids_29_475.jpg"
+    ],
+    "excluded_train_unreadable": []
+  }
+}

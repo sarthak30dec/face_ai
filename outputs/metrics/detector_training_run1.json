@@ -1,0 +1,86 @@
+{
+  "device": "mps",
+  "train_stats": {
+    "images": 3000,
+    "boxes_used": 28867,
+    "boxes_flagged_ignore": 494,
+    "boxes_below_min_size": 3838
+  },
+  "val_stats": {
+    "images": 300,
+    "boxes_used": 2985,
+    "boxes_flagged_ignore": 46,
+    "boxes_below_min_size": 408
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "step": 750,
+      "train_loss": 0.5070600288212299,
+      "val_ft_ap": 0.2692458329240373,
+      "epoch_minutes": 4.416072233517965,
+      "partial_epoch": false
+    },
+    {
+      "epoch": 1,
+      "step": 1500,
+      "train_loss": 0.5325365149776141,
+      "val_ft_ap": 0.306317632594224,
+      "epoch_minutes": 3.8046801646550494,
+      "partial_epoch": false
+    },
+    {
+      "epoch": 2,
+      "step": 2250,
+      "train_loss": 0.5328342598179976,
+      "val_ft_ap": 0.3306989442987568,
+      "epoch_minutes": 3.676883367697398,
+      "partial_epoch": false
+    }
+  ],
+  "best_val_ft_ap": 0.3306989442987568,
+  "total_minutes": 11.92943321466446,
+  "stopped_early": false,
+  "checkpoint_dir": "/Users/ssrivastava/Personal/face_ai/models/checkpoints/detector_ft",
+  "config": {
+    "seed": 42,
+    "arch": "fasterrcnn_mobilenet_v3_large_fpn",
+    "weights": "DEFAULT",
+    "device": "auto",
+    "train_split": "data/splits/wider_face/train_ft.json",
+    "val_split": "data/splits/wider_face/val_ft.json",
+    "max_train_images": 3000,
+    "max_val_images": 300,
+    "min_face_px": 8,
+    "image_max_side": 800,
+    "batch_size": 4,
+    "epochs": 3,
+    "lr": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "warmup_iters": 200,
+    "num_workers": 4,
+    "checkpoint_dir": "models/checkpoints/detector_ft",
+    "log_every": 50
+  },
+  "hardware": {
+    "os": "Darwin 25.6.0",
+    "os_version": "26.7.1",
+    "machine": "arm64",
+    "python": "3.11.15",
+    "cpu": "Apple M4 Pro",
+    "cpu_count_logical": 12,
+    "ram_gb": 24.0,
+    "disk_free_gb": 26.8,
+    "torch": "2.15.0",
+    "mps_available": true,
+    "cuda_available": false,
+    "onnxruntime": "1.31.1",
+    "onnxruntime_providers": [
+      "CoreMLExecutionProvider",
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "opencv": "5.0.0"
+  }
+}

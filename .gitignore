@@ -1,0 +1,34 @@
+# Environments
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.env
+
+# Datasets, models, outputs (large / licensed / reproducible from scripts)
+data/raw/
+data/interim/
+data/processed/
+models/pretrained/
+models/checkpoints/
+models/exports/
+outputs/predictions/
+outputs/visualizations/
+outputs/reports/*.log
+*.part
+*.corrupt
+
+# Private biometric data: never commit
+gallery/
+**/gallery.json
+**/embeddings*.npz
+*.mlpackage
+
+# Small, reproducible metadata IS tracked:
+!data/manifests/
+!data/splits/
+!outputs/metrics/
+!outputs/reports/
+
+.DS_Store

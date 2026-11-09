@@ -1,0 +1,129 @@
+{
+  "description": "Labeled Faces in the Wild (13,233 images of 5,749 people; 6,000 verification pairs in 10 folds)",
+  "source": "https://vis-www.cs.umass.edu/lfw/",
+  "version": "original (non-aligned 250x250), pairs.txt View 2",
+  "license": "No formal license; research benchmark distributed publicly by UMass Amherst. Images are of public figures collected from news media.",
+  "citation": "Huang et al., Labeled Faces in the Wild, UMass Tech Report 07-49, 2007",
+  "download_date": "2026-10-29T21:42:46.507024+00:00",
+  "location": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw",
+  "files": [
+    {
+      "filename": "lfw.tgz",
+      "url": "https://ndownloader.figshare.com/files/5976018",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw/archives/lfw.tgz",
+      "size": 180566744,
+      "sha256": "055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0",
+      "checksum_verified": true,
+      "checksum_source": "scikit-learn sklearn/datasets/_lfw.py",
+      "downloaded": true,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw",
+      "extracted_members": 18983,
+      "seconds": 24.846492052078247,
+      "extra": {}
+    },
+    {
+      "filename": "pairs.txt",
+      "url": "https://ndownloader.figshare.com/files/5976006",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw/archives/pairs.txt",
+      "size": 155335,
+      "sha256": "ea42330c62c92989f9d7c03237ed5d591365e89b3e649747777b70e692dc1592",
+      "checksum_verified": true,
+      "checksum_source": "scikit-learn sklearn/datasets/_lfw.py",
+      "downloaded": true,
+      "extracted_to": null,
+      "extracted_members": null,
+      "seconds": 1.3703529834747314,
+      "extra": {}
+    },
+    {
+      "filename": "pairsDevTrain.txt",
+      "url": "https://ndownloader.figshare.com/files/5976012",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw/archives/pairsDevTrain.txt",
+      "size": 56579,
+      "sha256": "1d454dada7dfeca0e7eab6f65dc4e97a6312d44cf142207be28d688be92aabfa",
+      "checksum_verified": true,
+      "checksum_source": "scikit-learn sklearn/datasets/_lfw.py",
+      "downloaded": true,
+      "extracted_to": null,
+      "extracted_members": null,
+      "seconds": 1.1405720710754395,
+      "extra": {}
+    },
+    {
+      "filename": "pairsDevTest.txt",
+      "url": "https://ndownloader.figshare.com/files/5976009",
+      "path": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw/archives/pairsDevTest.txt",
+      "size": 26002,
+      "sha256": "7cb06600ea8b2814ac26e946201cdb304296262aad67d046a16a7ec85d0ff87c",
+      "checksum_verified": true,
+      "checksum_source": "scikit-learn sklearn/datasets/_lfw.py",
+      "downloaded": true,
+      "extracted_to": null,
+      "extracted_members": null,
+      "seconds": 1.1956119537353516,
+      "extra": {}
+    }
+  ],
+  "archive_bytes": 180804660,
+  "image_counts": {
+    "images": 13233,
+    "identities": 5749
+  },
+  "expected": {
+    "images": 13233,
+    "identities": 5749
+  },
+  "download_status": "downloaded",
+  "download_errors": [],
+  "name": "lfw",
+  "updated_at": "2026-10-29T22:04:13.427896+00:00",
+  "validation_status": "valid",
+  "validation_report": "/Users/ssrivastava/Personal/face_ai/data/manifests/lfw_validation.json",
+  "validation_problems": [],
+  "preprocessing": {
+    "pairs": {
+      "folds": 10,
+      "pairs": 6000
+    },
+    "openset": {
+      "calibration": {
+        "identities": 2874,
+        "enrolled": 460,
+        "known_probes": 1674,
+        "unknown_probes": 2414
+      },
+      "test": {
+        "identities": 2875,
+        "enrolled": 441,
+        "known_probes": 1656,
+        "unknown_probes": 2434
+      }
+    },
+    "faces_yunet": {
+      "detector": "yunet",
+      "status_counts": {
+        "detected": 13233
+      },
+      "fallback_images": [],
+      "errors": []
+    },
+    "faces_scrfd": {
+      "detector": "scrfd",
+      "status_counts": {
+        "detected": 13214,
+        "detected_low_threshold": 12,
+        "fallback_mean_keypoints": 7
+      },
+      "fallback_images": [
+        "Grady_Little/Grady_Little_0001.jpg",
+        "John_Bolton/John_Bolton_0016.jpg",
+        "Lance_Armstrong/Lance_Armstrong_0015.jpg",
+        "Mohammad_Fares/Mohammad_Fares_0001.jpg",
+        "Morgan_Freeman/Morgan_Freeman_0002.jpg",
+        "Padraig_Harrington/Padraig_Harrington_0004.jpg",
+        "Richard_Gephardt/Richard_Gephardt_0007.jpg"
+      ],
+      "errors": []
+    }
+  }
+}

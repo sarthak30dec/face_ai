@@ -1,0 +1,27 @@
+{
+  "description": "MediaPipe Tasks Vision web runtime (WASM). Runs the face_landmarker model in the page on every video frame",
+  "source": "https://www.npmjs.com/package/@mediapipe/tasks-vision",
+  "license": "Apache-2.0",
+  "download_date": "2026-10-30T13:47:18.120583+00:00",
+  "location": "/Users/ssrivastava/Personal/face_ai/models/pretrained/tasks_vision",
+  "files": [
+    {
+      "filename": "tasks-vision-1.1.1.tgz",
+      "url": "https://registry.npmjs.org/@mediapipe/tasks-vision/-/tasks-vision-1.1.1.tgz",
+      "path": "/Users/ssrivastava/Personal/face_ai/models/pretrained/tasks_vision/tasks-vision-1.1.1.tgz",
+      "size": 12258918,
+      "sha256": "fbbea455a8b50c31c39092027b3548336de198bfcdbaf75cc08245e773011b8f",
+      "checksum_verified": false,
+      "checksum_source": "computed (no published checksum)",
+      "downloaded": true,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/models/pretrained/tasks_vision",
+      "extracted_members": 14,
+      "seconds": 1.3395180702209473,
+      "extra": {}
+    }
+  ],
+  "download_status": "downloaded",
+  "download_errors": [],
+  "name": "model_tasks_vision",
+  "updated_at": "2026-10-30T13:47:18.120621+00:00"
+}

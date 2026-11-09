@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "face_ai"
+version = "0.1.0"
+description = "Face detection, recognition and face-mesh visualization module (local, privacy-first)"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "Proprietary (code); see docs/model_cards.md and docs/datasets.md for third-party terms" }
+dependencies = [
+    "numpy==2.4.6",
+    "opencv-contrib-python==5.0.0.93",
+    "onnxruntime==1.31.1",
+    "mediapipe==1.2.0",
+    "scipy==1.17.1",
+    "scikit-learn==1.9.1",
+    "pyyaml==6.0.3",
+    "requests==2.34.2",
+    "tqdm==4.70.1",
+    "psutil==7.2.2",
+    "matplotlib==3.11.2",
+]
+
+[project.optional-dependencies]
+train = ["torch==2.15.0", "torchvision==0.29.2"]
+export = ["coremltools==9.0", "onnx==1.23.2", "onnx2torch==1.5.15"]
+dev = ["pytest==9.2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+face_ai = ["api/static/*", "api/static/sfx/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: needs downloaded datasets/models (skipped when absent)"]
+addopts = "-q"

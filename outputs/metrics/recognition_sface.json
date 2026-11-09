@@ -1,0 +1,252 @@
+{
+ "embedder": "sface",
+ "alignment_detector": "yunet",
+ "embedding_dim": 128,
+ "images_embedded": 11075,
+ "alignment_fallback_images": [],
+ "verification": {
+  "protocol": "LFW View 2 (6000 pairs, 10 folds), unrestricted with labeled outside data",
+  "auc": 0.9987665555555555,
+  "eer": {
+   "eer": 0.00816666666666667,
+   "threshold": 0.29903101921081543
+  },
+  "tar_at_far": [
+   {
+    "far_target": 0.001,
+    "tar": 0.988,
+    "far_actual": 0.001,
+    "threshold": 0.3428695797920227
+   },
+   {
+    "far_target": 0.01,
+    "tar": 0.9926666666666667,
+    "far_actual": 0.009666666666666667,
+    "threshold": 0.29353392124176025
+   },
+   {
+    "far_target": 0.1,
+    "tar": 0.9966666666666667,
+    "far_actual": 0.08066666666666666,
+    "threshold": 0.2095683217048645
+   }
+  ],
+  "tar_at_far_note": "thresholds chosen on the same 6000 pairs (descriptive ROC points, not held-out)",
+  "ten_fold": {
+   "mean_accuracy": 0.9934999999999998,
+   "std_accuracy": 0.003685557397916015,
+   "fold_accuracies": [
+    0.9933333333333333,
+    1.0,
+    0.9883333333333333,
+    0.9883333333333333,
+    0.9916666666666667,
+    0.995,
+    0.99,
+    0.9966666666666667,
+    0.9966666666666667,
+    0.995
+   ],
+   "fold_thresholds": [
+    0.30842089653015137,
+    0.30842089653015137,
+    0.332080602645874,
+    0.332080602645874,
+    0.30842089653015137,
+    0.30842089653015137,
+    0.30867433547973633,
+    0.30842089653015137,
+    0.30842089653015137,
+    0.30842089653015137
+   ]
+  },
+  "genuine_score_mean": 0.6537641286849976,
+  "impostor_score_mean": 0.08378054946660995,
+  "at_operating_threshold": {
+   "threshold": 0.46431517601013184,
+   "far": 0.0,
+   "frr": 0.058333333333333334,
+   "tar": 0.9416666666666667,
+   "accuracy": 0.9708333333333333
+  }
+ },
+ "identification": {
+  "protocol": "identity-disjoint calibration/test halves of LFW; 2 enrollment images per known identity; known probes exclude enrollment images",
+  "split_stats": {
+   "calibration": {
+    "identities": 2874,
+    "enrolled": 460,
+    "known_probes": 1674,
+    "unknown_probes": 2414
+   },
+   "test": {
+    "identities": 2875,
+    "enrolled": 441,
+    "known_probes": 1656,
+    "unknown_probes": 2434
+   }
+  },
+  "mean": {
+   "fpir_0.01": {
+    "threshold_from_calibration": 0.46431517601013184,
+    "calibration": {
+     "threshold": 0.46431517601013184,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9958183990442055,
+     "dir": 0.98805256869773,
+     "known_rejected_as_unknown": 0.010752688172043012,
+     "misidentification_rate": 0.0011947431302270011,
+     "fpir": 0.009942004971002486,
+     "unknown_rejection_rate": 0.9900579950289975
+    },
+    "test": {
+     "threshold": 0.46431517601013184,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9957729468599034,
+     "dir": 0.9867149758454107,
+     "known_rejected_as_unknown": 0.013285024154589372,
+     "misidentification_rate": 0.0,
+     "fpir": 0.009860312243221035,
+     "unknown_rejection_rate": 0.990139687756779
+    }
+   },
+   "fpir_0.05": {
+    "threshold_from_calibration": 0.4243616461753845,
+    "calibration": {
+     "threshold": 0.4243616461753845,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9958183990442055,
+     "dir": 0.9910394265232975,
+     "known_rejected_as_unknown": 0.007168458781362007,
+     "misidentification_rate": 0.0017921146953405018,
+     "fpir": 0.04971002485501243,
+     "unknown_rejection_rate": 0.9502899751449876
+    },
+    "test": {
+     "threshold": 0.4243616461753845,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9957729468599034,
+     "dir": 0.9921497584541062,
+     "known_rejected_as_unknown": 0.007246376811594203,
+     "misidentification_rate": 0.0006038647342995169,
+     "fpir": 0.04437140509449466,
+     "unknown_rejection_rate": 0.9556285949055053
+    }
+   }
+  },
+  "max": {
+   "fpir_0.01": {
+    "threshold_from_calibration": 0.46380695700645447,
+    "calibration": {
+     "threshold": 0.46380695700645447,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9946236559139785,
+     "dir": 0.9862604540023895,
+     "known_rejected_as_unknown": 0.013142174432497013,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.009942004971002486,
+     "unknown_rejection_rate": 0.9900579950289975
+    },
+    "test": {
+     "threshold": 0.46380695700645447,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9963768115942029,
+     "dir": 0.9830917874396136,
+     "known_rejected_as_unknown": 0.016908212560386472,
+     "misidentification_rate": 0.0,
+     "fpir": 0.010682004930156122,
+     "unknown_rejection_rate": 0.9893179950698439
+    }
+   },
+   "fpir_0.05": {
+    "threshold_from_calibration": 0.42682382464408875,
+    "calibration": {
+     "threshold": 0.42682382464408875,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9946236559139785,
+     "dir": 0.9898446833930705,
+     "known_rejected_as_unknown": 0.008363201911589008,
+     "misidentification_rate": 0.0017921146953405018,
+     "fpir": 0.04971002485501243,
+     "unknown_rejection_rate": 0.9502899751449876
+    },
+    "test": {
+     "threshold": 0.42682382464408875,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9963768115942029,
+     "dir": 0.9897342995169082,
+     "known_rejected_as_unknown": 0.00966183574879227,
+     "misidentification_rate": 0.0006038647342995169,
+     "fpir": 0.05217748562037798,
+     "unknown_rejection_rate": 0.9478225143796221
+    }
+   }
+  }
+ },
+ "operating_threshold": {
+  "value": 0.46431517601013184,
+  "strategy": "mean",
+  "target_fpir": 0.01,
+  "chosen_on": "calibration identities only"
+ },
+ "performance": {
+  "model_load_seconds": 0.04596254100033548,
+  "model_size_mb": 36.90371799468994,
+  "embedding_pass_seconds": 0.030315000003611203,
+  "embedding_pass_peak_rss_mb": 319.5,
+  "latency_batch1_per_face": {
+   "n": 210,
+   "mean_ms": 3.7725043237081817,
+   "p50_ms": 3.767646001506364,
+   "p95_ms": 3.9035560988850193,
+   "min_ms": 3.594959001929965,
+   "max_ms": 4.188709004665725,
+   "throughput_per_s": 265.0759056034826,
+   "warmup_calls": 10,
+   "peak_rss_mb": 370.25,
+   "rss_increase_mb": 0.1875
+  },
+  "latency_batch32_per_batch": {
+   "n": 6,
+   "mean_ms": 120.56106916619076,
+   "p50_ms": 120.84856249930453,
+   "p95_ms": 121.71177050186088,
+   "min_ms": 118.70879099296872,
+   "max_ms": 121.82358300196938,
+   "throughput_per_s": 8.294551524103706,
+   "warmup_calls": 1,
+   "peak_rss_mb": 370.296875,
+   "rss_increase_mb": 0.046875
+  },
+  "input": "112x112 aligned face; timing excludes detection/alignment"
+ },
+ "hardware": {
+  "os": "Darwin 25.6.0",
+  "os_version": "26.7.1",
+  "machine": "arm64",
+  "python": "3.11.15",
+  "cpu": "Apple M4 Pro",
+  "cpu_count_logical": 12,
+  "ram_gb": 24.0,
+  "disk_free_gb": 24.3,
+  "torch": "2.15.0",
+  "mps_available": true,
+  "cuda_available": false,
+  "onnxruntime": "1.31.1",
+  "onnxruntime_providers": [
+   "CoreMLExecutionProvider",
+   "AzureExecutionProvider",
+   "CPUExecutionProvider"
+  ],
+  "opencv": "5.0.0"
+ },
+ "date": "2026-10-30T05:53:48.178848+00:00"
+}

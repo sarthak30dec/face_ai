@@ -1,0 +1,29 @@
+seed: 42
+
+detection:
+  split: data/splits/wider_face/test.json          # official WIDER FACE val = our held-out test set
+  gt_dir: data/raw/wider_face/eval_tools/ground_truth
+  detectors: [yunet, scrfd]
+  eval_score_threshold: 0.02                       # keep low-score boxes so the PR curve is complete
+  iou_threshold: 0.5
+  warmup_images: 10
+  # Operating points reported in addition to AP (raw detector score thresholds).
+  operating_thresholds:
+    yunet: 0.6
+    scrfd: 0.5
+    torchvision: 0.5
+
+recognition:
+  embedders: [sface, arcface_r50]
+  alignment_detector: yunet                        # keypoints from data/processed/lfw/faces_<detector>.json
+  pairs: data/splits/lfw/pairs_view2.json
+  openset: data/splits/lfw/openset.json
+  far_targets: [0.001, 0.01, 0.1]                  # 3000 impostor pairs -> FAR 1e-3 is only 3 pairs
+  calibration_fpir: [0.01, 0.05]                   # thresholds chosen on calibration identities only
+  operating_fpir: 0.01                             # the threshold written to configs/recognition.yaml
+  strategy: mean
+
+benchmark:
+  warmup: 10
+  runs: 200
+  image: data/raw/wider_face/WIDER_val/images/12--Group/12_Group_Group_12_Group_Group_12_10.jpg

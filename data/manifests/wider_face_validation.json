@@ -1,0 +1,91 @@
+{
+  "dataset": "wider_face",
+  "splits": {
+    "train": {
+      "image_root": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/WIDER_train/images",
+      "annotation_file": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/wider_face_split/wider_face_train_bbx_gt.txt",
+      "status": "ok",
+      "annotated_images": 12880,
+      "images_on_disk": 12880,
+      "missing_images": [],
+      "unannotated_images": [],
+      "corrupt_images": [],
+      "duplicate_groups": [
+        [
+          "39--Ice_Skating/39_Ice_Skating_Ice_Skating_39_617.jpg",
+          "5--Car_Accident/5_Car_Accident_Accident_5_907.jpg"
+        ],
+        [
+          "41--Swimming/41_Swimming_Swimmer_41_745.jpg",
+          "41--Swimming/41_Swimming_Swimming_41_184.jpg"
+        ]
+      ],
+      "faces": 159420,
+      "images_without_faces": 4,
+      "degenerate_boxes": 27,
+      "invalid_flag_boxes": 2399,
+      "tiny_boxes_lt4px": 1456,
+      "out_of_bounds_boxes": 1,
+      "out_of_bounds_examples": [
+        "54--Rescue/54_Rescue_rescuepeople_54_29.jpg: [1050.0, 142.0, 0.0, 50.0] in 1024x1024"
+      ],
+      "width_range": [
+        1024,
+        1024
+      ],
+      "height_range": [
+        171,
+        9108
+      ],
+      "events": 61
+    },
+    "val": {
+      "image_root": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/WIDER_val/images",
+      "annotation_file": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/wider_face_split/wider_face_val_bbx_gt.txt",
+      "status": "ok",
+      "annotated_images": 3226,
+      "images_on_disk": 3226,
+      "missing_images": [],
+      "unannotated_images": [],
+      "corrupt_images": [],
+      "duplicate_groups": [],
+      "faces": 39708,
+      "images_without_faces": 0,
+      "degenerate_boxes": 11,
+      "invalid_flag_boxes": 585,
+      "tiny_boxes_lt4px": 440,
+      "out_of_bounds_boxes": 1,
+      "out_of_bounds_examples": [
+        "39--Ice_Skating/39_Ice_Skating_iceskiing_39_583.jpg: [1026.0, 474.0, 0.0, 23.0] in 1024x577"
+      ],
+      "width_range": [
+        1024,
+        1024
+      ],
+      "height_range": [
+        218,
+        5541
+      ],
+      "events": 61
+    }
+  },
+  "problems": [
+    "1 byte-identical images appear in both train and val"
+  ],
+  "train_val_identical_files": 1,
+  "eval_ground_truth": {
+    "dir": "/Users/ssrivastava/Personal/face_ai/data/raw/wider_face/eval_tools/ground_truth",
+    "files": [
+      "wider_easy_val.mat",
+      "wider_face_val.mat",
+      "wider_hard_val.mat",
+      "wider_medium_val.mat"
+    ],
+    "val_faces_in_mat": 39708,
+    "val_faces_in_txt": 39708
+  },
+  "notes": [
+    "__MACOSX/ is macOS archive metadata from eval_tools.zip; ignored"
+  ],
+  "status": "valid_with_warnings"
+}

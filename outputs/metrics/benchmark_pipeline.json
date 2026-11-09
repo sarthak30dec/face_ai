@@ -1,0 +1,166 @@
+{
+ "image": "data/raw/wider_face/WIDER_val/images/12--Group/12_Group_Group_12_Group_Group_12_10.jpg",
+ "resolution_wh": [
+  1024,
+  681
+ ],
+ "runs": 200,
+ "warmup": 10,
+ "batch_size": 1,
+ "hardware": {
+  "os": "Darwin 25.6.0",
+  "os_version": "26.7.1",
+  "machine": "arm64",
+  "python": "3.11.15",
+  "cpu": "Apple M4 Pro",
+  "cpu_count_logical": 12,
+  "ram_gb": 24.0,
+  "disk_free_gb": 24.5,
+  "torch": "2.15.0",
+  "mps_available": true,
+  "cuda_available": false,
+  "onnxruntime": "1.31.1",
+  "onnxruntime_providers": [
+   "CoreMLExecutionProvider",
+   "AzureExecutionProvider",
+   "CPUExecutionProvider"
+  ],
+  "opencv": "5.0.0"
+ },
+ "date": "2026-10-30T05:52:32.735045+00:00",
+ "detectors": {
+  "yunet": {
+   "model_load_seconds": 0.003709000004164409,
+   "faces": 13,
+   "model_size_mb": 0.22181415557861328,
+   "n": 200,
+   "mean_ms": 7.635349175361625,
+   "p50_ms": 7.541541501268512,
+   "p95_ms": 8.694883001953711,
+   "min_ms": 6.6210000004502945,
+   "max_ms": 14.856832996883895,
+   "throughput_per_s": 130.96977977469354,
+   "warmup_calls": 10,
+   "peak_rss_mb": 337.78125,
+   "rss_increase_mb": 0.609375
+  },
+  "scrfd": {
+   "model_load_seconds": 0.010909874996286817,
+   "faces": 13,
+   "model_size_mb": 16.139819145202637,
+   "n": 200,
+   "mean_ms": 34.66196769011731,
+   "p50_ms": 35.16927099917666,
+   "p95_ms": 40.546403553162236,
+   "min_ms": 26.309582994144876,
+   "max_ms": 43.50058300042292,
+   "throughput_per_s": 28.85006439738608,
+   "warmup_calls": 10,
+   "peak_rss_mb": 458.96875,
+   "rss_increase_mb": 2.765625
+  }
+ },
+ "embedders": {
+  "sface": {
+   "model_load_seconds": 0.014574375003576279,
+   "model_size_mb": 36.90371799468994,
+   "per_face_batch1": {
+    "n": 200,
+    "mean_ms": 3.785658354499901,
+    "p50_ms": 3.787416499108076,
+    "p95_ms": 3.922199997396092,
+    "min_ms": 3.573417001462076,
+    "max_ms": 4.264457995304838,
+    "throughput_per_s": 264.1548460946903,
+    "warmup_calls": 10,
+    "peak_rss_mb": 580.015625,
+    "rss_increase_mb": 0.75
+   },
+   "per_image_batch13": {
+    "n": 50,
+    "mean_ms": 49.94676164074917,
+    "p50_ms": 49.60043750179466,
+    "p95_ms": 51.46792910054501,
+    "min_ms": 47.407250000105705,
+    "max_ms": 63.2969169964781,
+    "throughput_per_s": 20.021318042452382,
+    "warmup_calls": 3,
+    "peak_rss_mb": 580.25,
+    "rss_increase_mb": 0.21875
+   }
+  },
+  "arcface_r50": {
+   "model_load_seconds": 0.04994183399685426,
+   "model_size_mb": 166.3054084777832,
+   "per_face_batch1": {
+    "n": 200,
+    "mean_ms": 17.086312144965632,
+    "p50_ms": 17.05891700112261,
+    "p95_ms": 17.38053750632389,
+    "min_ms": 16.417667000496294,
+    "max_ms": 20.603750002919696,
+    "throughput_per_s": 58.52638015246861,
+    "warmup_calls": 10,
+    "peak_rss_mb": 745.96875,
+    "rss_increase_mb": 0.03125
+   },
+   "per_image_batch13": {
+    "n": 50,
+    "mean_ms": 251.09382822047337,
+    "p50_ms": 247.2844165022252,
+    "p95_ms": 263.38406890135957,
+    "min_ms": 243.08629100414691,
+    "max_ms": 340.5926669947803,
+    "throughput_per_s": 3.982574988350364,
+    "warmup_calls": 3,
+    "peak_rss_mb": 879.765625,
+    "rss_increase_mb": 3.796875
+   }
+  }
+ },
+ "landmarks": {
+  "model_load_seconds": 0.7760080410007504,
+  "per_face": {
+   "n": 200,
+   "mean_ms": 3.5128970946971094,
+   "p50_ms": 3.4466879988030996,
+   "p95_ms": 3.9889499970740867,
+   "min_ms": 3.3005419973051175,
+   "max_ms": 4.566125004203059,
+   "throughput_per_s": 284.66532694895875,
+   "warmup_calls": 10,
+   "peak_rss_mb": 977.21875,
+   "rss_increase_mb": 1.390625
+  },
+  "model_size_mb": 3.5844764709472656
+ },
+ "end_to_end_default_stack": {
+  "faces_in_image": 13,
+  "analyze": {
+   "n": 40,
+   "mean_ms": 104.01080947431183,
+   "p50_ms": 103.71085399674485,
+   "p95_ms": 105.81762259935203,
+   "min_ms": 102.27891700196778,
+   "max_ms": 110.29395799414488,
+   "throughput_per_s": 9.61438532258492,
+   "warmup_calls": 3,
+   "peak_rss_mb": 1009.734375,
+   "rss_increase_mb": 1.109375
+  },
+  "render_overlay": {
+   "n": 50,
+   "mean_ms": 4.7063850006088614,
+   "p50_ms": 4.6718750018044375,
+   "p95_ms": 4.878785600158153,
+   "min_ms": 4.602207998686936,
+   "max_ms": 5.012207999243401,
+   "throughput_per_s": 212.47730474039645,
+   "warmup_calls": 3,
+   "peak_rss_mb": 1014.609375,
+   "rss_increase_mb": 2.3125
+  },
+  "peak_rss_mb": 1009.734375,
+  "stack": "yunet + sface + mediapipe landmarks (per face), CPU"
+ }
+}

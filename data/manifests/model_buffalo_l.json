@@ -1,0 +1,27 @@
+{
+  "description": "InsightFace buffalo_l pack: SCRFD-10GF detector (det_10g.onnx) + ArcFace ResNet50 trained on WebFace600K (w600k_r50.onnx)",
+  "source": "https://github.com/deepinsight/insightface/tree/master/python-package",
+  "license": "Non-commercial research use only (InsightFace pretrained-model terms). Code is MIT.",
+  "download_date": "2026-10-29T22:20:23.685606+00:00",
+  "location": "/Users/ssrivastava/Personal/face_ai/models/pretrained/buffalo_l",
+  "files": [
+    {
+      "filename": "buffalo_l.zip",
+      "url": "https://github.com/deepinsight/insightface/releases/download/v0.7/buffalo_l.zip",
+      "path": "/Users/ssrivastava/Personal/face_ai/models/pretrained/buffalo_l/buffalo_l.zip",
+      "size": 288621354,
+      "sha256": "80ffe37d8a5940d59a7384c201a2a38d4741f2f3c51eef46ebb28218a7b0ca2f",
+      "checksum_verified": true,
+      "checksum_source": "\\\"recorded on first download 2026-10-30 (no published checksum)\\\"",
+      "downloaded": false,
+      "extracted_to": "/Users/ssrivastava/Personal/face_ai/models/pretrained/buffalo_l",
+      "extracted_members": 5,
+      "seconds": 0.15759515762329102,
+      "extra": {}
+    }
+  ],
+  "download_status": "downloaded",
+  "download_errors": [],
+  "name": "model_buffalo_l",
+  "updated_at": "2026-10-29T22:20:23.685883+00:00"
+}

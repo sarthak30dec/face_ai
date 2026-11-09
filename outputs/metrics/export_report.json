@@ -1,0 +1,49 @@
+{
+  "yunet": {
+    "onnx": "/Users/ssrivastava/Personal/face_ai/models/exports/onnx/face_detection_yunet_2023mar.onnx",
+    "onnx_size_mb": 0.22181415557861328,
+    "coreml": {
+      "mlpackage": "/Users/ssrivastava/Personal/face_ai/models/exports/coreml/yunet.mlpackage",
+      "convert_seconds": 1.4474639892578125,
+      "size_mb": 0.18761348724365234,
+      "parity_vs_onnxruntime": {
+        "samples": 8,
+        "max_abs_diff": 0.05648016929626465,
+        "note": "Core ML run on macOS with FLOAT16 compute precision"
+      }
+    }
+  },
+  "sface": {
+    "onnx": "/Users/ssrivastava/Personal/face_ai/models/exports/onnx/face_recognition_sface_2021dec.onnx",
+    "onnx_size_mb": 36.90371799468994,
+    "coreml": {
+      "mlpackage": "/Users/ssrivastava/Personal/face_ai/models/exports/coreml/sface.mlpackage",
+      "convert_seconds": 1.8317201137542725,
+      "size_mb": 18.428502082824707,
+      "parity_vs_onnxruntime": {
+        "samples": 8,
+        "max_abs_diff": 0.00547868013381958,
+        "min_cosine": 0.9999975562095642,
+        "note": "Core ML run on macOS with FLOAT16 compute precision"
+      }
+    }
+  },
+  "arcface_r50": {
+    "onnx": "/Users/ssrivastava/Personal/face_ai/models/exports/onnx/w600k_r50.onnx",
+    "onnx_size_mb": 166.3054084777832,
+    "coreml": {
+      "mlpackage": "/Users/ssrivastava/Personal/face_ai/models/exports/coreml/arcface_r50.mlpackage",
+      "convert_seconds": 3.536396026611328,
+      "size_mb": 83.27168846130371,
+      "parity_vs_onnxruntime": {
+        "samples": 8,
+        "max_abs_diff": 0.09184983372688293,
+        "min_cosine": 0.999762237071991,
+        "note": "Core ML run on macOS with FLOAT16 compute precision"
+      }
+    }
+  },
+  "mediapipe_face_landmarker": {
+    "note": "Not converted: use the official MediaPipe Tasks iOS SDK (MediaPipeTasksVision) with the same face_landmarker.task file; connection topology is identical (FaceLandmarksConnections)."
+  }
+}

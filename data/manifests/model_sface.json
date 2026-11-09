@@ -1,0 +1,27 @@
+{
+  "description": "SFace (MobileFaceNet backbone, sigmoid-constrained hypersphere loss), 128-d embedding",
+  "source": "https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface",
+  "license": "Apache-2.0",
+  "download_date": "2026-10-29T22:20:23.526760+00:00",
+  "location": "/Users/ssrivastava/Personal/face_ai/models/pretrained/sface",
+  "files": [
+    {
+      "filename": "face_recognition_sface_2021dec.onnx",
+      "url": "https://huggingface.co/opencv/face_recognition_sface/resolve/main/face_recognition_sface_2021dec.onnx",
+      "path": "/Users/ssrivastava/Personal/face_ai/models/pretrained/sface/face_recognition_sface_2021dec.onnx",
+      "size": 38696353,
+      "sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+      "checksum_verified": true,
+      "checksum_source": "huggingface x-linked-etag (sha256)",
+      "downloaded": false,
+      "extracted_to": null,
+      "extracted_members": null,
+      "seconds": 0.024422883987426758,
+      "extra": {}
+    }
+  ],
+  "download_status": "downloaded",
+  "download_errors": [],
+  "name": "model_sface",
+  "updated_at": "2026-10-29T22:20:23.527114+00:00"
+}

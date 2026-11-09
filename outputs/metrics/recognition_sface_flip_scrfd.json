@@ -1,0 +1,361 @@
+{
+ "embedder": "sface",
+ "alignment_detector": "scrfd",
+ "flip_augment": true,
+ "embedding_dim": 128,
+ "images_embedded": 11075,
+ "alignment_fallback_images": [
+  "Grady_Little/Grady_Little_0001.jpg",
+  "John_Bolton/John_Bolton_0016.jpg",
+  "Mohammad_Fares/Mohammad_Fares_0001.jpg",
+  "Morgan_Freeman/Morgan_Freeman_0002.jpg",
+  "Padraig_Harrington/Padraig_Harrington_0004.jpg",
+  "Richard_Gephardt/Richard_Gephardt_0007.jpg"
+ ],
+ "verification": {
+  "protocol": "LFW View 2 (6000 pairs, 10 folds), unrestricted with labeled outside data",
+  "auc": 0.9990545555555554,
+  "eer": {
+   "eer": 0.004833333333333336,
+   "threshold": 0.3255043923854828
+  },
+  "tar_at_far": [
+   {
+    "far_target": 0.001,
+    "tar": 0.9923333333333333,
+    "far_actual": 0.0006666666666666666,
+    "threshold": 0.35800766944885254
+   },
+   {
+    "far_target": 0.01,
+    "tar": 0.994,
+    "far_actual": 0.0036666666666666666,
+    "threshold": 0.3255043923854828
+   },
+   {
+    "far_target": 0.1,
+    "tar": 0.998,
+    "far_actual": 0.051,
+    "threshold": 0.24607722461223602
+   }
+  ],
+  "tar_at_far_note": "thresholds chosen on the same 6000 pairs (descriptive ROC points, not held-out)",
+  "ten_fold": {
+   "mean_accuracy": 0.9959999999999999,
+   "std_accuracy": 0.0020000000000000113,
+   "fold_accuracies": [
+    0.995,
+    1.0,
+    0.995,
+    0.9933333333333333,
+    0.995,
+    0.9966666666666667,
+    0.9933333333333333,
+    0.9983333333333333,
+    0.9966666666666667,
+    0.9966666666666667
+   ],
+   "fold_thresholds": [
+    0.34428948163986206,
+    0.34478557109832764,
+    0.34428948163986206,
+    0.3425113558769226,
+    0.34428948163986206,
+    0.34428948163986206,
+    0.34428948163986206,
+    0.34428948163986206,
+    0.34428948163986206,
+    0.34428948163986206
+   ]
+  },
+  "genuine_score_mean": 0.6954682469367981,
+  "impostor_score_mean": 0.10205259174108505,
+  "at_operating_threshold": {
+   "threshold": 0.47197842597961426,
+   "far": 0.0,
+   "frr": 0.030333333333333334,
+   "tar": 0.9696666666666667,
+   "accuracy": 0.9848333333333333
+  }
+ },
+ "identification": {
+  "protocol": "identity-disjoint calibration/test halves of LFW; 2 enrollment images per known identity; known probes exclude enrollment images",
+  "split_stats": {
+   "calibration": {
+    "identities": 2874,
+    "enrolled": 460,
+    "known_probes": 1674,
+    "unknown_probes": 2414
+   },
+   "test": {
+    "identities": 2875,
+    "enrolled": 441,
+    "known_probes": 1656,
+    "unknown_probes": 2434
+   }
+  },
+  "mean": {
+   "fpir_0.01": {
+    "threshold_from_calibration": 0.47197842597961426,
+    "calibration": {
+     "threshold": 0.47197842597961426,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9970131421744325,
+     "dir": 0.9910394265232975,
+     "known_rejected_as_unknown": 0.008363201911589008,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.009942004971002486,
+     "unknown_rejection_rate": 0.9900579950289975
+    },
+    "test": {
+     "threshold": 0.47197842597961426,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9969806763285024,
+     "dir": 0.9939613526570048,
+     "known_rejected_as_unknown": 0.006038647342995169,
+     "misidentification_rate": 0.0,
+     "fpir": 0.006984387838948234,
+     "unknown_rejection_rate": 0.9930156121610517
+    }
+   },
+   "fpir_0.05": {
+    "threshold_from_calibration": 0.4349837303161621,
+    "calibration": {
+     "threshold": 0.4349837303161621,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9970131421744325,
+     "dir": 0.9934289127837514,
+     "known_rejected_as_unknown": 0.005376344086021506,
+     "misidentification_rate": 0.0011947431302270011,
+     "fpir": 0.04971002485501243,
+     "unknown_rejection_rate": 0.9502899751449876
+    },
+    "test": {
+     "threshold": 0.4349837303161621,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9969806763285024,
+     "dir": 0.9957729468599034,
+     "known_rejected_as_unknown": 0.0036231884057971015,
+     "misidentification_rate": 0.0006038647342995169,
+     "fpir": 0.0419063270336894,
+     "unknown_rejection_rate": 0.9580936729663106
+    }
+   }
+  },
+  "max": {
+   "fpir_0.01": {
+    "threshold_from_calibration": 0.48220205307006836,
+    "calibration": {
+     "threshold": 0.48220205307006836,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.995221027479092,
+     "dir": 0.9898446833930705,
+     "known_rejected_as_unknown": 0.009557945041816009,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.009942004971002486,
+     "unknown_rejection_rate": 0.9900579950289975
+    },
+    "test": {
+     "threshold": 0.48220205307006836,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9963768115942029,
+     "dir": 0.9903381642512077,
+     "known_rejected_as_unknown": 0.00966183574879227,
+     "misidentification_rate": 0.0,
+     "fpir": 0.006162695152013147,
+     "unknown_rejection_rate": 0.9938373048479868
+    }
+   },
+   "fpir_0.05": {
+    "threshold_from_calibration": 0.4379028379917145,
+    "calibration": {
+     "threshold": 0.4379028379917145,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.995221027479092,
+     "dir": 0.992831541218638,
+     "known_rejected_as_unknown": 0.006571087216248507,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.04971002485501243,
+     "unknown_rejection_rate": 0.9502899751449876
+    },
+    "test": {
+     "threshold": 0.4379028379917145,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.9963768115942029,
+     "dir": 0.9951690821256038,
+     "known_rejected_as_unknown": 0.0036231884057971015,
+     "misidentification_rate": 0.0012077294685990338,
+     "fpir": 0.039852095316351685,
+     "unknown_rejection_rate": 0.9601479046836483
+    }
+   }
+  }
+ },
+ "calibrated_decision": {
+  "file": "configs/calibration/sface_flip_scrfd.json",
+  "identification": {
+   "accept": 0.47197842597961426,
+   "reject": 0.47197842597961426,
+   "target_fpir": 0.01,
+   "target_fnir": 0.01
+  },
+  "verification": {
+   "accept": 0.4424106478691101,
+   "reject": 0.4424106478691101,
+   "target_far": 0.0001,
+   "target_frr": 0.01
+  },
+  "n_impostor": 1878806,
+  "n_genuine": 1674,
+  "test_decisions": {
+   "no_quality_gate_no_margin": {
+    "known_probes": {
+     "correct_match": 0.9939613526570048,
+     "wrong_person": 0.0,
+     "missed_as_unknown": 0.006038647342995169,
+     "uncertain": 0.0,
+     "n": 1656
+    },
+    "unknown_probes": {
+     "false_match": 0.006984387838948234,
+     "unknown": 0.9930156121610517,
+     "uncertain": 0.0,
+     "n": 2434
+    }
+   },
+   "quality_gate": {
+    "known_probes": {
+     "correct_match": 0.9655797101449275,
+     "wrong_person": 0.0,
+     "missed_as_unknown": 0.005434782608695652,
+     "uncertain": 0.028985507246376812,
+     "n": 1656
+    },
+    "unknown_probes": {
+     "false_match": 0.00657354149548069,
+     "unknown": 0.9654889071487264,
+     "uncertain": 0.027937551355792935,
+     "n": 2434
+    }
+   },
+   "quality_gate_margin_0.05": {
+    "known_probes": {
+     "correct_match": 0.9655797101449275,
+     "wrong_person": 0.0,
+     "missed_as_unknown": 0.005434782608695652,
+     "uncertain": 0.028985507246376812,
+     "n": 1656
+    },
+    "unknown_probes": {
+     "false_match": 0.00657354149548069,
+     "unknown": 0.9654889071487264,
+     "uncertain": 0.027937551355792935,
+     "n": 2434
+    }
+   }
+  },
+  "test_verification_1to1": {
+   "genuine_pairs": 1656,
+   "impostor_pairs": 1802034,
+   "accept_threshold": 0.4424106478691101,
+   "reject_threshold": 0.4424106478691101,
+   "far": 8.601391538672411e-05,
+   "frr": 0.004227053140096618,
+   "genuine_uncertain": 0.0,
+   "impostor_uncertain": 0.0,
+   "frr_quality_ok_probes": 0.0037313432835820895,
+   "frr_low_quality_probes": 0.020833333333333332,
+   "low_quality_probe_fraction": 0.028985507246376812
+  },
+  "quality_effect_lfw_pairs": {
+   "threshold": 0.3255043923854828,
+   "pairs_both_acceptable": 5682,
+   "error_rate_both_acceptable": 0.0040478704681450196,
+   "pairs_with_low_quality": 318,
+   "error_rate_with_low_quality": 0.018867924528301886
+  },
+  "quality_config": {
+   "iod_bad": 12,
+   "iod_good": 32,
+   "sharp_bad": 15,
+   "sharp_good": 120,
+   "yaw_good": 0.15,
+   "yaw_bad": 0.55,
+   "roll_good": 15.0,
+   "roll_bad": 45.0,
+   "brightness_bad": 35.0,
+   "brightness_good": 70.0,
+   "contrast_bad": 12.0,
+   "contrast_good": 30.0,
+   "det_bad": 0.5,
+   "det_good": 0.85,
+   "min_quality": 0.35
+  }
+ },
+ "operating_threshold": {
+  "value": 0.47197842597961426,
+  "strategy": "mean",
+  "target_fpir": 0.01,
+  "chosen_on": "calibration identities only"
+ },
+ "performance": {
+  "model_load_seconds": 0.05445933300507022,
+  "model_size_mb": 36.90371799468994,
+  "embedding_pass_seconds": 92.3048762920007,
+  "embedding_pass_peak_rss_mb": 1009.390625,
+  "latency_batch1_per_face": {
+   "n": 210,
+   "mean_ms": 8.661218861864958,
+   "p50_ms": 7.992479000677122,
+   "p95_ms": 11.347962351283051,
+   "min_ms": 7.266707994858734,
+   "max_ms": 24.139083005138673,
+   "throughput_per_s": 115.45719095068303,
+   "warmup_calls": 10,
+   "peak_rss_mb": 533.125,
+   "rss_increase_mb": 0.296875
+  },
+  "latency_batch32_per_batch": {
+   "n": 6,
+   "mean_ms": 248.8817570010724,
+   "p50_ms": 247.85868800245225,
+   "p95_ms": 255.15836475096876,
+   "min_ms": 242.35004100046353,
+   "max_ms": 255.93741700140527,
+   "throughput_per_s": 4.017972277476694,
+   "warmup_calls": 1,
+   "peak_rss_mb": 527.375,
+   "rss_increase_mb": 1.234375
+  },
+  "input": "112x112 aligned face; timing excludes detection/alignment"
+ },
+ "hardware": {
+  "os": "Darwin 25.6.0",
+  "os_version": "26.7.1",
+  "machine": "arm64",
+  "python": "3.11.15",
+  "cpu": "Apple M4 Pro",
+  "cpu_count_logical": 12,
+  "ram_gb": 24.0,
+  "disk_free_gb": 31.3,
+  "torch": "2.15.0",
+  "mps_available": true,
+  "cuda_available": false,
+  "onnxruntime": "1.31.1",
+  "onnxruntime_providers": [
+   "CoreMLExecutionProvider",
+   "AzureExecutionProvider",
+   "CPUExecutionProvider"
+  ],
+  "opencv": "5.0.0"
+ },
+ "date": "2026-10-30T07:13:34.252531+00:00"
+}

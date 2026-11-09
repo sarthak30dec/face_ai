@@ -1,0 +1,37 @@
+{
+  "dataset": "lfw",
+  "problems": [],
+  "images": 13233,
+  "identities": 5749,
+  "identities_with_ge2_images": 1680,
+  "identities_with_ge3_images": 901,
+  "identities_with_ge5_images": 423,
+  "max_images_per_identity": 530,
+  "image_sizes": [
+    "250x250"
+  ],
+  "corrupt_images": [],
+  "misnamed_files": [],
+  "duplicate_groups": [
+    [
+      "Bart_Hendricks/Bart_Hendricks_0001.jpg",
+      "Ricky_Ray/Ricky_Ray_0001.jpg"
+    ],
+    [
+      "Carlos_Beltran/Carlos_Beltran_0001.jpg",
+      "Raul_Ibanez/Raul_Ibanez_0001.jpg"
+    ]
+  ],
+  "pairs": {
+    "file": "/Users/ssrivastava/Personal/face_ai/data/raw/lfw/archives/pairs.txt",
+    "folds": 10,
+    "pairs": 6000,
+    "positive": 3000,
+    "negative": 3000,
+    "missing_referenced_images": []
+  },
+  "notes": [
+    "2 groups of byte-identical images (kept; reported)"
+  ],
+  "status": "valid"
+}

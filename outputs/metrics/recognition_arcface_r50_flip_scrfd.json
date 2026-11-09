@@ -1,0 +1,361 @@
+{
+ "embedder": "arcface_r50",
+ "alignment_detector": "scrfd",
+ "flip_augment": true,
+ "embedding_dim": 512,
+ "images_embedded": 11075,
+ "alignment_fallback_images": [
+  "Grady_Little/Grady_Little_0001.jpg",
+  "John_Bolton/John_Bolton_0016.jpg",
+  "Mohammad_Fares/Mohammad_Fares_0001.jpg",
+  "Morgan_Freeman/Morgan_Freeman_0002.jpg",
+  "Padraig_Harrington/Padraig_Harrington_0004.jpg",
+  "Richard_Gephardt/Richard_Gephardt_0007.jpg"
+ ],
+ "verification": {
+  "protocol": "LFW View 2 (6000 pairs, 10 folds), unrestricted with labeled outside data",
+  "auc": 0.9993879999999999,
+  "eer": {
+   "eer": 0.003333333333333335,
+   "threshold": 0.1721368134021759
+  },
+  "tar_at_far": [
+   {
+    "far_target": 0.001,
+    "tar": 0.997,
+    "far_actual": 0.0006666666666666666,
+    "threshold": 0.22231747210025787
+   },
+   {
+    "far_target": 0.01,
+    "tar": 0.9976666666666667,
+    "far_actual": 0.004666666666666667,
+    "threshold": 0.1643189787864685
+   },
+   {
+    "far_target": 0.1,
+    "tar": 0.9983333333333333,
+    "far_actual": 0.024,
+    "threshold": 0.11909545958042145
+   }
+  ],
+  "tar_at_far_note": "thresholds chosen on the same 6000 pairs (descriptive ROC points, not held-out)",
+  "ten_fold": {
+   "mean_accuracy": 0.9978333333333333,
+   "std_accuracy": 0.0018333333333333272,
+   "fold_accuracies": [
+    0.995,
+    1.0,
+    1.0,
+    0.9966666666666667,
+    0.995,
+    0.9983333333333333,
+    0.9966666666666667,
+    1.0,
+    0.9983333333333333,
+    0.9983333333333333
+   ],
+   "fold_thresholds": [
+    0.2622777819633484,
+    0.2477881759405136,
+    0.2477881759405136,
+    0.2477881759405136,
+    0.2477881759405136,
+    0.22139574587345123,
+    0.2477881759405136,
+    0.2477881759405136,
+    0.2477881759405136,
+    0.22139574587345123
+   ]
+  },
+  "genuine_score_mean": 0.6835681796073914,
+  "impostor_score_mean": 0.00419841380789876,
+  "at_operating_threshold": {
+   "threshold": 0.3068571090698242,
+   "far": 0.0,
+   "frr": 0.005,
+   "tar": 0.995,
+   "accuracy": 0.9975
+  }
+ },
+ "identification": {
+  "protocol": "identity-disjoint calibration/test halves of LFW; 2 enrollment images per known identity; known probes exclude enrollment images",
+  "split_stats": {
+   "calibration": {
+    "identities": 2874,
+    "enrolled": 460,
+    "known_probes": 1674,
+    "unknown_probes": 2414
+   },
+   "test": {
+    "identities": 2875,
+    "enrolled": 441,
+    "known_probes": 1656,
+    "unknown_probes": 2434
+   }
+  },
+  "mean": {
+   "fpir_0.01": {
+    "threshold_from_calibration": 0.3068571090698242,
+    "calibration": {
+     "threshold": 0.3068571090698242,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9982078853046595,
+     "dir": 0.997610513739546,
+     "known_rejected_as_unknown": 0.0017921146953405018,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.009942004971002486,
+     "unknown_rejection_rate": 0.9900579950289975
+    },
+    "test": {
+     "threshold": 0.3068571090698242,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.998792270531401,
+     "dir": 0.9981884057971014,
+     "known_rejected_as_unknown": 0.0018115942028985507,
+     "misidentification_rate": 0.0,
+     "fpir": 0.006984387838948234,
+     "unknown_rejection_rate": 0.9930156121610517
+    }
+   },
+   "fpir_0.05": {
+    "threshold_from_calibration": 0.2608179450035095,
+    "calibration": {
+     "threshold": 0.2608179450035095,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9982078853046595,
+     "dir": 0.9982078853046595,
+     "known_rejected_as_unknown": 0.0005973715651135006,
+     "misidentification_rate": 0.0011947431302270011,
+     "fpir": 0.04971002485501243,
+     "unknown_rejection_rate": 0.9502899751449876
+    },
+    "test": {
+     "threshold": 0.2608179450035095,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.998792270531401,
+     "dir": 0.998792270531401,
+     "known_rejected_as_unknown": 0.0012077294685990338,
+     "misidentification_rate": 0.0,
+     "fpir": 0.04313886606409203,
+     "unknown_rejection_rate": 0.956861133935908
+    }
+   }
+  },
+  "max": {
+   "fpir_0.01": {
+    "threshold_from_calibration": 0.31113651394844055,
+    "calibration": {
+     "threshold": 0.31113651394844055,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9982078853046595,
+     "dir": 0.997610513739546,
+     "known_rejected_as_unknown": 0.0017921146953405018,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.009942004971002486,
+     "unknown_rejection_rate": 0.9900579950289975
+    },
+    "test": {
+     "threshold": 0.31113651394844055,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.998792270531401,
+     "dir": 0.9981884057971014,
+     "known_rejected_as_unknown": 0.0018115942028985507,
+     "misidentification_rate": 0.0,
+     "fpir": 0.007395234182415777,
+     "unknown_rejection_rate": 0.9926047658175843
+    }
+   },
+   "fpir_0.05": {
+    "threshold_from_calibration": 0.2691284418106079,
+    "calibration": {
+     "threshold": 0.2691284418106079,
+     "known_probes": 1674,
+     "unknown_probes": 2414,
+     "rank1_accuracy_closed_set": 0.9982078853046595,
+     "dir": 0.997610513739546,
+     "known_rejected_as_unknown": 0.0017921146953405018,
+     "misidentification_rate": 0.0005973715651135006,
+     "fpir": 0.04971002485501243,
+     "unknown_rejection_rate": 0.9502899751449876
+    },
+    "test": {
+     "threshold": 0.2691284418106079,
+     "known_probes": 1656,
+     "unknown_probes": 2434,
+     "rank1_accuracy_closed_set": 0.998792270531401,
+     "dir": 0.998792270531401,
+     "known_rejected_as_unknown": 0.0012077294685990338,
+     "misidentification_rate": 0.0,
+     "fpir": 0.0447822514379622,
+     "unknown_rejection_rate": 0.9552177485620378
+    }
+   }
+  }
+ },
+ "calibrated_decision": {
+  "file": "configs/calibration/arcface_r50_flip_scrfd.json",
+  "identification": {
+   "accept": 0.3068571090698242,
+   "reject": 0.3068571090698242,
+   "target_fpir": 0.01,
+   "target_fnir": 0.01
+  },
+  "verification": {
+   "accept": 0.26445937156677246,
+   "reject": 0.26445937156677246,
+   "target_far": 0.0001,
+   "target_frr": 0.01
+  },
+  "n_impostor": 1878806,
+  "n_genuine": 1674,
+  "test_decisions": {
+   "no_quality_gate_no_margin": {
+    "known_probes": {
+     "correct_match": 0.9981884057971014,
+     "wrong_person": 0.0,
+     "missed_as_unknown": 0.0018115942028985507,
+     "uncertain": 0.0,
+     "n": 1656
+    },
+    "unknown_probes": {
+     "false_match": 0.006984387838948234,
+     "unknown": 0.9930156121610517,
+     "uncertain": 0.0,
+     "n": 2434
+    }
+   },
+   "quality_gate": {
+    "known_probes": {
+     "correct_match": 0.9698067632850241,
+     "wrong_person": 0.0,
+     "missed_as_unknown": 0.0012077294685990338,
+     "uncertain": 0.028985507246376812,
+     "n": 1656
+    },
+    "unknown_probes": {
+     "false_match": 0.006984387838948234,
+     "unknown": 0.9650780608052588,
+     "uncertain": 0.027937551355792935,
+     "n": 2434
+    }
+   },
+   "quality_gate_margin_0.05": {
+    "known_probes": {
+     "correct_match": 0.9698067632850241,
+     "wrong_person": 0.0,
+     "missed_as_unknown": 0.0012077294685990338,
+     "uncertain": 0.028985507246376812,
+     "n": 1656
+    },
+    "unknown_probes": {
+     "false_match": 0.006984387838948234,
+     "unknown": 0.9650780608052588,
+     "uncertain": 0.027937551355792935,
+     "n": 2434
+    }
+   }
+  },
+  "test_verification_1to1": {
+   "genuine_pairs": 1656,
+   "impostor_pairs": 1802034,
+   "accept_threshold": 0.26445937156677246,
+   "reject_threshold": 0.26445937156677246,
+   "far": 0.00010987584030046048,
+   "frr": 0.0012077294685990338,
+   "genuine_uncertain": 0.0,
+   "impostor_uncertain": 0.0,
+   "frr_quality_ok_probes": 0.0006218905472636816,
+   "frr_low_quality_probes": 0.020833333333333332,
+   "low_quality_probe_fraction": 0.028985507246376812
+  },
+  "quality_effect_lfw_pairs": {
+   "threshold": 0.1721368134021759,
+   "pairs_both_acceptable": 5682,
+   "error_rate_both_acceptable": 0.0031678986272439284,
+   "pairs_with_low_quality": 318,
+   "error_rate_with_low_quality": 0.006289308176100629
+  },
+  "quality_config": {
+   "iod_bad": 12,
+   "iod_good": 32,
+   "sharp_bad": 15,
+   "sharp_good": 120,
+   "yaw_good": 0.15,
+   "yaw_bad": 0.55,
+   "roll_good": 15.0,
+   "roll_bad": 45.0,
+   "brightness_bad": 35.0,
+   "brightness_good": 70.0,
+   "contrast_bad": 12.0,
+   "contrast_good": 30.0,
+   "det_bad": 0.5,
+   "det_good": 0.85,
+   "min_quality": 0.35
+  }
+ },
+ "operating_threshold": {
+  "value": 0.3068571090698242,
+  "strategy": "mean",
+  "target_fpir": 0.01,
+  "chosen_on": "calibration identities only"
+ },
+ "performance": {
+  "model_load_seconds": 0.1624602079973556,
+  "model_size_mb": 166.3054084777832,
+  "embedding_pass_seconds": 402.3288005419963,
+  "embedding_pass_peak_rss_mb": 919.96875,
+  "latency_batch1_per_face": {
+   "n": 210,
+   "mean_ms": 34.12716350950567,
+   "p50_ms": 33.40625000055297,
+   "p95_ms": 35.14760174766707,
+   "min_ms": 32.582792002358474,
+   "max_ms": 90.50700000079814,
+   "throughput_per_s": 29.302171559656962,
+   "warmup_calls": 10,
+   "peak_rss_mb": 786.0,
+   "rss_increase_mb": 0.046875
+  },
+  "latency_batch32_per_batch": {
+   "n": 6,
+   "mean_ms": 1104.8013330000686,
+   "p50_ms": 1088.519749500847,
+   "p95_ms": 1158.5345727507956,
+   "min_ms": 1075.4394579998916,
+   "max_ms": 1171.1390830023447,
+   "throughput_per_s": 0.9051401099277439,
+   "warmup_calls": 1,
+   "peak_rss_mb": 780.640625,
+   "rss_increase_mb": 1.078125
+  },
+  "input": "112x112 aligned face; timing excludes detection/alignment"
+ },
+ "hardware": {
+  "os": "Darwin 25.6.0",
+  "os_version": "26.7.1",
+  "machine": "arm64",
+  "python": "3.11.15",
+  "cpu": "Apple M4 Pro",
+  "cpu_count_logical": 12,
+  "ram_gb": 24.0,
+  "disk_free_gb": 31.4,
+  "torch": "2.15.0",
+  "mps_available": true,
+  "cuda_available": false,
+  "onnxruntime": "1.31.1",
+  "onnxruntime_providers": [
+   "CoreMLExecutionProvider",
+   "AzureExecutionProvider",
+   "CPUExecutionProvider"
+  ],
+  "opencv": "5.0.0"
+ },
+ "date": "2026-10-30T07:11:56.503969+00:00"
+}
